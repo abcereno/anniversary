@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AutoNavigateProvider } from './assets/Contexts.jsx'; // Import your context provider if needed
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <AutoNavigateProvider> {/* Wrap with your context provider if needed */}
+        <App />
+      </AutoNavigateProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
